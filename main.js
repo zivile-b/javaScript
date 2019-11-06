@@ -234,16 +234,71 @@ for (var g=-30; g <=-70; g--) {
 }
 
 //2
-
+//1 variantas
 let pirminis = 'abcdef';
-               
-for (x=5; x < pirminis.length-1; x--) {
-    let reverse = pirminis(x)
-    console.log(pirminis(x))
+
+let rezultatas = "";
+for (x = pirminis.length-1; x >= 0 ; x--) {
+        console.log(pirminis[x]);
+        rezultatas = rezultatas + pirminis[x];    
 }
 
+console.log(rezultatas);
 
-// 
+// 2 variantas
+
+console.log('--------------------')
+pirminis = 'gerina'.split('');
+for(i = 0; i < pirminis.length / 2; i++) {
+
+    let temporar = pirminis[i]; //a
+    pirminis[i] = pirminis[pirminis.length-1-i] //f
+    pirminis[pirminis.length-1-i] = temporar; //a
+     console.log(pirminis);
+    
+}
+
+console.log(pirminis.join(''));
+
+//3 // Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 3 yra 4 vienetai.
+
+for( let x = 0; x <= 11; x++) {
+    if((x % 3) == 0)  {
+        console.log('dalijasi is 3');
+    }
+    if((x % 5) == 0)  {
+        console.log('dalijasi is 3');
+    }
+    if((x % 7) == 0)  {
+        console.log('dalijasi is 3');
+    }
+}
+
+for(x = 8; x <= 31; x++) {
+    if((x % 3 == 0)) {
+        console.log('dalijasi is 3')
+    }
+    if((x % 5 == 0)) {
+        console.log('dalijasi is 5')
+    }
+    if((x % 7 == 0)) {
+        console.log('dalijasi is 7')
+    }
+}
+
+for(x = -18; x <= -18; x++) {
+    if((x % 3 == 0)) {
+        console.log('dalijasi is 3')
+    }
+    if((x % 5 == 0)) {
+        console.log('dalijasi is 5')
+    }
+    if((x % 7 == 0)) {
+        console.log('dalijasi is 7')
+    }
+}
+
+//d
 
 
 
@@ -254,21 +309,7 @@ for (x=5; x < pirminis.length-1; x--) {
 // 8 - 31
 // -18 - 18
 // rezultatą pateikti tokiu formatu:
-// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 3 yra 4 vienetai.
+
 // Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 5 yra 3 vienetai.
 // Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 7 yra 2 vienetai.
 
-
-
-// /12./
-
-
-// /13./
-
-
-// /14./
-
-
-// /15./
-
-// /16./
