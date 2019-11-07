@@ -207,8 +207,8 @@ if (sarasas3.length <= sarasas4.length) {
     console.log('Bandykite kitą kartą.')
 }
 
-// /11./Ciklo for panaudojimas
-
+// />>>>>>>>>>>>./Ciklo for panaudojimas
+//1
 for ( var x=0; x <= 0; x++) {
     console.log(x);
 }
@@ -260,20 +260,20 @@ for(i = 0; i < pirminis.length / 2; i++) {
 
 console.log(pirminis.join(''));
 
-//3 // Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 3 yra 4 vienetai.
-
+//3 // 
+//a
 for( let x = 0; x <= 11; x++) {
     if((x % 3) == 0)  {
         console.log('dalijasi is 3');
     }
     if((x % 5) == 0)  {
-        console.log('dalijasi is 3');
+        console.log('dalijasi is 5');
     }
     if((x % 7) == 0)  {
-        console.log('dalijasi is 3');
+        console.log('dalijasi is 7');
     }
 }
-
+//b
 for(x = 8; x <= 31; x++) {
     if((x % 3 == 0)) {
         console.log('dalijasi is 3')
@@ -285,7 +285,7 @@ for(x = 8; x <= 31; x++) {
         console.log('dalijasi is 7')
     }
 }
-
+//c
 for(x = -18; x <= -18; x++) {
     if((x % 3 == 0)) {
         console.log('dalijasi is 3')
@@ -299,17 +299,50 @@ for(x = -18; x <= -18; x++) {
 }
 
 //d
+//1d
+let daliklis = 3;
+let nuo = 0;
+let iki = 11;
+let kartai = 0;
+
+for(x = nuo; x <= iki; x++) {
+    // rezultata = (x % iki)
+    if(x % daliklis ===0){
+        kartai++;
+    }
+}
+
+console.log('Skaičių intervale tarp ' + nuo + ' ir ' + iki + ' , besidalinančių be liekanos iš ' + daliklis + ' yra ' + kartai+ ' vienetai');
+//2d
+daliklis = 5;
+nuo = 0;
+iki = 11;
+kartai = 0;
+
+for(x = nuo; x <= iki; x++) {
+    // rezultata = (x % iki)
+    if(x % daliklis ===0){
+        kartai++;
+    }
+}
+
+console.log('Skaičių intervale tarp ' + nuo + ' ir ' + iki + ' , besidalinančių be liekanos iš ' + daliklis + ' yra ' + kartai+ ' vienetai');
+//3d
+
+daliklis = 7;
+nuo = 0;
+iki = 11;
+kartai = 0;
+
+for(x = nuo; x <= iki; x++) {
+    // rezultata = (x % iki)
+    if(x % daliklis ===0){
+        kartai++;
+    }
+}
+
+console.log('Skaičių intervale tarp ' + nuo + ' ir ' + iki + ' , besidalinančių be liekanos iš ' + daliklis + ' yra ' + kartai+ ' vienetai');
 
 
 
-// panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
-// pvz.: “abcdef” -> “fedcba”
-// Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
-// 0 - 11
-// 8 - 31
-// -18 - 18
-// rezultatą pateikti tokiu formatu:
-
-// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 5 yra 3 vienetai.
-// Skaičių intervale tarp 0 ir 11, besidalinančių be liekanos iš 7 yra 2 vienetai.
 
