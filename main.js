@@ -307,7 +307,7 @@ let kartai = 0;
 
 for(x = nuo; x <= iki; x++) {
     // rezultata = (x % iki)
-    if(x % daliklis ===0){
+    if(x % daliklis === 0){
         kartai++;
     }
 }
@@ -320,8 +320,8 @@ iki = 11;
 kartai = 0;
 
 for(x = nuo; x <= iki; x++) {
-    // rezultata = (x % iki)
-    if(x % daliklis ===0){
+    
+    if(x % daliklis === 0){
         kartai++;
     }
 }
@@ -335,14 +335,104 @@ iki = 11;
 kartai = 0;
 
 for(x = nuo; x <= iki; x++) {
-    // rezultata = (x % iki)
-    if(x % daliklis ===0){
+    
+    if(x % daliklis === 0) {
         kartai++;
     }
 }
 
 console.log('Skaičių intervale tarp ' + nuo + ' ir ' + iki + ' , besidalinančių be liekanos iš ' + daliklis + ' yra ' + kartai+ ' vienetai');
 
+/////funkcijos///////
+
+//1
+
+function tusciaFunkcija() {
+    return false;
+}
+console.log( tusciaFunkcija() );
+
+//2
+
+function daugyba1 (skaicius1, skaicius2) {
+    return(skaicius1 * skaicius2);
+}
+
+console.log(daugyba1(4, 3));
+
+function daugyba2 (skaicius3, skaicius2) {
+    return (skaicius3 * skaicius2)
+}
+
+console.log (daugyba2(7, 8));
+
+function daugyba3 (skaicius1, skaicius2, skaicius3) {
+    return (skaicius1 * skaicius3)
+}
+console.log(daugyba3(4, 2, 3));
+
+// 3// Funkcija pavadinimu “skaitmenuKiekisSkaiciuje”
+
+function skaitmenuKiekisSkaiciuje (numb1) {
+    if(typeof(numb1) !== 'number' || isNaN(numb1) === true) {
+        return 'Pateikta netinkamo tipo reikšmė';
+    }
+    let skaitmKiekis = ('' + numb1).length;
+// papildomas kl., o jei su '-' zenklu
+    if(numb1 < 0) {
+        skaitmKiekis--;
+    }
+// papildomas kl., o jei su kableliu
+    if(numb1 % 1 !== 0) {
+        skaitmKiekis--;
+    }
+    // if(('' + numb1).indexOf('.') >= 0) {
+    //     skaitmKiekis--;
+//     }
+    return skaitmKiekis;
+}
+console.log( skaitmenuKiekisSkaiciuje( true ) );
+console.log( skaitmenuKiekisSkaiciuje( 'asd' ) );
+console.log( skaitmenuKiekisSkaiciuje( NaN ) );
+console.log( skaitmenuKiekisSkaiciuje( 5 ) );
+console.log( skaitmenuKiekisSkaiciuje( 781 ) );
+console.log( skaitmenuKiekisSkaiciuje( 37060123456 ) );
+console.log( skaitmenuKiekisSkaiciuje( -348 ) );
+console.log( skaitmenuKiekisSkaiciuje( 2.465 ) );
+
+//4 Funkcija pavadinimu “didziausiasSkaiciusSarase”:
+
+function didziausiasSkaiciusSarase(list) {
+    if(Array.isArray(list) === false) {
+        return 'Pateikta netinkamo tipo reikšmė.';
+    }
+    if(list.length === 0) {
+        return'Pateiktas sąrašas negali būti tuščias.';
+    }
+    
+
+    let didziausias = - Infinity;
+    for (let t = 0; t < list.length; t++) {
+        if (typeof(list[t]) !== 'number' || isFinite(list[t]) === false) {
+            continue;
+        }
+        if (list[t] > didziausias) {
+            didziausias = list[t];
+        }
+    }
+    return didziausias;
+}
+
+console.log( didziausiasSkaiciusSarase( 'pomidoras' ) );
+console.log( didziausiasSkaiciusSarase( [] ) );
+console.log( didziausiasSkaiciusSarase( [ 1 ] ) );
+console.log( didziausiasSkaiciusSarase( [ 1, 2, 3 ] ) );
+console.log( didziausiasSkaiciusSarase( [ -5, 78, 14, 0, 18 ] ) );
+console.log( didziausiasSkaiciusSarase( [ 69, 69, 69, 69, 66 ] ) );
+console.log( didziausiasSkaiciusSarase( [ -1, -2, -3, -4, -5, -6, -7, -8 ] ) );
+console.log( didziausiasSkaiciusSarase( [ -1, -2, -3, -4, -5, -6, -7, 5, Infinity, NaN, -Infinity] ) );
+
+//5 Funkcija pavadinimu “isrinktiRaides”:
 
 
 
