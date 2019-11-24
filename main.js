@@ -1,4 +1,4 @@
-// Kintamųjų inicijavimas
+// ******************Kintamųjų inicijavimas******************
 // /1./
 
 let ger = 1;
@@ -43,7 +43,7 @@ console.log (sarasas5);
 let sarasas6 = ['labas', 'rytas', 'sako', 'tau', 'kava'];
 console.log (sarasas6);
 
-// Veiksmai su kintamaisiais
+//// ****************** Veiksmai su kintamaisiais******************
 // /1./
 
 let skaicius = ger + gera + geras;
@@ -62,7 +62,7 @@ console.log(skaiciukas);
 let rinkinys = sarasas6[4] + ", " + sarasas6[3] + ", " + sarasas6[2] + ", " + sarasas6[1] + ", " + sarasas6[0];
 console.log(rinkinys);
 
-//Kintamųjų palyginimas
+//******************Kintamųjų palyginimas******************
 // /1./
 let vienas = 5;
 let du = 7;
@@ -207,31 +207,43 @@ if (sarasas3.length <= sarasas4.length) {
     console.log('Bandykite kitą kartą.')
 }
 
-// />>>>>>>>>>>>./Ciklo for panaudojimas
+console.log('******************Ciklo for panaudojimas******************')
 //1
+let sk = 0;
 for ( var x=0; x <= 0; x++) {
-    console.log(x);
+    sk = sk + x;
+    console.log(sk);
 }
 
+let rez = 0;
 for (var a=0; a <=4; a++) {
-    console.log(a);
+    rez=rez+a;
 }
+console.log(rez);
 
+let ats = 0;
 for (var z=0; z <=100; z++) {
-    console.log(z);
+    ats = ats + z;   
 }
+console.log(ats);
 
+let kazkas= 0;
 for (var s=574; s <=815; s++) {
-    console.log(s);
+    kazkas = kazkas + s;
 }
+console.log(kazkas);
 
+let k = 0;
 for (var f=-50; f <=-50; f++) {
-    console.log(f);
+    k=k+f;
 }
+console.log(k);
 
+let skaic=0;
 for (var g=-30; g <=-70; g--) {
-    console.log(g);
+    skaic=skaic+g;
 }
+console.log(skaic);
 
 //2
 //1 variantas
@@ -239,7 +251,7 @@ let pirminis = 'abcdef';
 
 let rezultatas = "";
 for (x = pirminis.length-1; x >= 0 ; x--) {
-        console.log(pirminis[x]);
+        // console.log(pirminis[x]);
         rezultatas = rezultatas + pirminis[x];    
 }
 
@@ -254,10 +266,8 @@ for(i = 0; i < pirminis.length / 2; i++) {
     let temporar = pirminis[i]; //a
     pirminis[i] = pirminis[pirminis.length-1-i] //f
     pirminis[pirminis.length-1-i] = temporar; //a
-     console.log(pirminis);
-    
+     console.log(pirminis);   
 }
-
 console.log(pirminis.join(''));
 
 //3 // 
@@ -343,7 +353,7 @@ for(x = nuo; x <= iki; x++) {
 
 console.log('Skaičių intervale tarp ' + nuo + ' ir ' + iki + ' , besidalinančių be liekanos iš ' + daliklis + ' yra ' + kartai+ ' vienetai');
 
-/////funkcijos///////
+/////*****************Funkcijos///////
 
 //1
 
@@ -434,5 +444,80 @@ console.log( didziausiasSkaiciusSarase( [ -1, -2, -3, -4, -5, -6, -7, 5, Infinit
 
 //5 Funkcija pavadinimu “isrinktiRaides”:
 
+function isrinktiRaides(text, numberLetter) {
+    if(typeof(text) !== 'string') {
+       return 'Pirmasis kintamasis yra netinkamo tipo.'; 
+    }
+    if(text === '' && text.length > 100) {
+        return 'Pirmojo kintamojo reikšmė yra netinkamo dydžio.'; 
+    }
+    if(typeof(numberLetter) !== 'number') {
+        return 'Antrasis kintamasis yra netinkamo tipo.'; 
+    }
+    if(numberLetter <= 0) {
+        return 'Antrasis kintamasis turi būti didesnis už nulį.';
+    }
+    if(numberLetter > text.length) {
+        return 'Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.';
+    }
+    let rez = '';
+    for(let x=numberLetter-1; x<text.length; x=x+numberLetter) {
+        rez = rez + text[x];
+    }
+
+    return rez;
+}
+
+console.log( isrinktiRaides( 'abcdefg', 2 ) );
+// rezultatas: “bdf”
+console.log( isrinktiRaides( 'abcdefghijkl', 3 ) );
+// rezultatas: “cfil”
+console.log( isrinktiRaides( 'abc', 0 ) );
+// rezultatas: “Antrasis kintamasis turi būti didesnis už nulį.”
+console.log( isrinktiRaides( 'abc', 4 ) );
+// rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
+console.log( isrinktiRaides( 1561, 2 ) );
+// rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
+
+// 6 Funkcija pavadinimu “dalyba”:
+
+function dalyba(first, second) {
+
+    let errors = new Array();
+
+    if(typeof(first) !== 'number') {
+        errors.push('Turi buti skaicius, pirmas');
+       return errors;
+    } 
+    if(typeof(second) !== 'number') {
+        errors.push('Turi buti skaicius, antras')
+        return errors;
+    }
+    if(second === 0) {
+        errors.push('Dalyba is nulio negalima')
+        return errors;
+    }
+    if(isFinite(first) === false) {
+        errors.push('Turi buti skaicius');
+        return errors;
+    }
+    if(isFinite(second) === false) {
+        errors.push('Turi buti skaicius')
+        return errors;
+    }
+    if(errors.length > 0) {
+        return errors;
+    }
+    return first / second;
+}
+
+console.log(dalyba(0, 0));
+console.log(dalyba(5, 2));
+console.log(dalyba('acd', 2));
+console.log(dalyba(5, 'kad'));
+console.log(dalyba(2.34, 6));
+console.log(dalyba(6, -2));
+console.log(dalyba(4, NaN));
+console.log(dalyba(Infinity, 3 ));
 
 
